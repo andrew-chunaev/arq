@@ -1,0 +1,9 @@
+#include "udp_channel.h"
+#include <stdlib.h>
+
+udp_channel_ptr udp_channel_init(char *src_ip_addr, int src_port, char *dest_ip_addr, int dest_port, void* (*on_receive)(char *data, int len))
+{
+    udp_channel_ptr channel = malloc(sizeof(udp_channel));
+    channel->on_receive = on_receive;
+    channel->stop_receiving = 1;
+}

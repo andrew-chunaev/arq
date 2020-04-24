@@ -1,0 +1,17 @@
+#ifndef UDP_CHANNEL_H
+#define UDP_CHANNEL_H
+
+#include <sys/socket.h>
+
+typedef struct _upd_channel
+{
+    struct socketaddr_in src_addr;
+    struct socketaddr_in dest_addr;
+    int sock;
+    void* (*on_receive)(void *args);
+} udp_channel, *udp_channel_ptr;
+
+udp_channel_ptr udp_channel_init(char *src_ip_addr, int src_port, char *dest_ip_addr, int dest_port, void* (*on_receive)(void *args));
+void udp_channel_send(udp_channel_ptr channel, const char *data);
+void udp_channel_delete(udp_channel_ptr channel);
+#endif

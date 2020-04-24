@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+#include "../udp_channel.h"
+
+void test_receive(char *data, int len)
+{
+    printf(data);
+}
+
+int main(int argc, char *argv[])
+{
+    printf("Point 1 of channel. Waiting for hello from Point 2...\n");
+    udp_channel_ptr channel = udp_channel_init("127.0.0.1",
+                                               20000,
+                                               "127.0.0.1",
+                                               20010,
+                                               test_receive);
+    udp_channel_receive(channel);
+    sleep(30);
+    udp_channel_delete(channel);
+    
+}

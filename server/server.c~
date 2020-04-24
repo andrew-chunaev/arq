@@ -1,0 +1,12 @@
+#include "server.h"
+
+server_ptr server_init()
+{
+    return null;
+}
+void server_run(server_ptr s)
+{
+}
+void server_delete(server_ptr s)
+{
+}

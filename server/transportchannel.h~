@@ -1,0 +1,9 @@
+#ifndef TRANSPORTCHANNEL_H
+#define TRANSPORTCHANNEL_H
+
+typedef struct _transportchannel
+{
+    
+} transportchannel, *transportchannel_ptr
+
+#endif

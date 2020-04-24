@@ -1,0 +1,7 @@
+#include "server.h"
+int main(int argc, char *argv[])
+{
+    server_ptr s = server_init();
+    server_run(s);
+    server_delete(s);
+}
