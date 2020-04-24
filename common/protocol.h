@@ -17,6 +17,6 @@ typedef struct _data_unit
     char *payload;
 } data_unit, *data_unit_ptr;
 
-#define DATA_UNIT_HEADER_LENGTH sizeof(ungined char) + sizeof(unsigned long)
+#define DATA_UNIT_HEADER_LENGTH sizeof(unsigned char) + sizeof(unsigned long)
     
 #endif
